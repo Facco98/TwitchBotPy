@@ -31,7 +31,7 @@ class Bot:
         try:
             if not self.__threadStarted:
                 self.__thread = Thread(target=self.__listen_function__, args=(callback,))
-                self._thread.deamon = True
+                self.__thread.deamon = True
                 self.__threadStarted = True
                 self.__thread.start()
         except Exception:
@@ -41,6 +41,7 @@ class Bot:
     def __listen_function__(self, callback):
         try:
             while self.__threadStarted:
+                print("Runnign")
                 received = self.__websocket.recv()
                 callback(received)
         except Exception:
