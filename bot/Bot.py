@@ -41,7 +41,6 @@ class Bot:
     def __listen_function__(self, callback):
         try:
             while self.__threadStarted:
-                print("Runnign")
                 received = self.__websocket.recv()
                 callback(received)
         except Exception:
@@ -94,7 +93,6 @@ class TwitchBot(Bot):
     def dispatch(self, msg):
         if msg == "PING :tmi.twitch.tv":
             super().send("PONG :tmi.twitch.tv")
-            print("PING")
         else:
             try:
                 finenome = msg.index("!")
@@ -121,7 +119,7 @@ class TwitchBot(Bot):
             content = str[finecomando+1:]
             return cmd, content
         except Exception as ex:
-            print(str, ex)
+            pass
 
 
 
