@@ -2,7 +2,7 @@ import setuptools
 
 setuptools.setup(
     name="twitchbot",
-    version="0.0.1",
+    version="0.0.2",
     author="Facco089",
     author_email="devack@hotmail.it",
     description="An easy library to create a twitch bot",
