@@ -1,6 +1,3 @@
-# TwitchBotPy
-Minimal python library for creating a twitch bot
-
 ## Installing
 You can easily install this package via pip
 
