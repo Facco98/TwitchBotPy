@@ -32,4 +32,41 @@ twitch_bot.start_listening()
 while True:
   pass
 ```
-  
+## Advanced
+You can easily costumize what the bot does when a message is received, when a command is executed or when a user tries to run an unknown command.
+
+```python
+.
+.
+twitch_bot = TwitchBot(username, oauth)
+twitch_bot.on_message = lambda msg, who, channel : {
+  # Your code goes here
+}
+
+twitch_bot.on_command = lambda cmd, other, who, channel : {
+  # Your commands handling logig
+}
+
+twitch_bot.unknown_command = lambda cmd, who, channel : {
+  # Handle and unsupported command logic
+}
+.
+.
+
+````
+
+You can even define your own callback and handle directly the string twitch sends you
+```python
+.
+.
+twitch_bot = TwitchBot(username, oauth)
+twitch_bot.connect()
+twitch_bot.join("Channel")
+twitch_bot.start_listening(callback=lambda msg : {
+  # Handle the raw string from twitch
+})
+
+.
+.
+```
+
